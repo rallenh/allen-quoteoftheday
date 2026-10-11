@@ -1,0 +1,15 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [ { "Name": "Allen Hewes" } ],
+        "Category": "Miscellaneous",
+        "Description": "A daily quote from BrainyQuote's quote-of-the-day feeds (Today's, Art, Funny, Love, Nature). Fetched once a day and cached, shown instantly. Flat, see-through, text colour picked for contrast with the wallpaper.",
+        "Icon": "format-text-blockquote",
+        "Id": "org.allen.quoteoftheday",
+        "License": "GPL-2.0+",
+        "Name": "Quote of the Day",
+        "Version": "0.1.0",
+        "Website": "https://github.com/rallenh/allen-quoteoftheday"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0"
+}
