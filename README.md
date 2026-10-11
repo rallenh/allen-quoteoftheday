@@ -14,7 +14,7 @@ Modelled on the Rainmeter skin "PIA Quote of the Day".
 ## Features
 - Categories: pick one, several or all on the Quotes settings page. With more than one, click ⊕ or use the
   mouse wheel to switch.
-- Header (feed title), author (bold), quote (bold, wraps), "Read more" at the bottom right (opens the author's
+- Header (feed title), author (bold), quote (regular weight by default; Medium/SemiBold/Bold selectable; wraps), "Read more" at the bottom right (opens the author's
   quotes on BrainyQuote).
 - One font family and size (header, author and button scale with the quote size); width in characters.
 - Text colour: automatic contrast against the wallpaper (white/black or tinted), custom, or theme colour.
@@ -40,3 +40,9 @@ cd package && zip -r ../org.allen.quoteoftheday-v0.1.0.plasmoid . && cd ..
 ```
 Release: bump `"Version"` in `package/metadata.json` (and the version in the user-agent in `ui/main.qml`), commit,
 `git tag -a v0.x.y -m "…"`, build, `git push origin main v0.x.y`.
+
+## To consider
+- A font picker filtered to families that have Medium/SemiBold faces (Hack Nerd Font has only Regular and Bold;
+  similar monospace Nerd Fonts with in-between weights: JetBrainsMono, FiraCode/FiraMono, BlexMono (IBM Plex Mono),
+  CaskaydiaMono, GeistMono, AtkynsonMono). Would be a lazy, searchable list built from `fc-list` when "Choose…" is
+  clicked (not a ComboBox of all fonts, which is slow).

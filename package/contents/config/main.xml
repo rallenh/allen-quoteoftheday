@@ -18,7 +18,7 @@
     <!-- Weight of the quote text (CSS-style: 400 regular, 500 medium, 600 semibold, 700 bold = the Rainmeter skin's look).
          The author stays bold. Fonts without the weight (e.g. Hack: regular/bold only) use the nearest one. -->
     <entry name="quoteWeight" type="Int">
-      <default>500</default>
+      <default>400</default>
     </entry>
     <!-- Seconds after start-up before checking for new quotes (cached quotes are shown at once) -->
     <entry name="startupDelay" type="Int">
