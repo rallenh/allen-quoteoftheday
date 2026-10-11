@@ -21,14 +21,14 @@ Modelled on the Rainmeter skin "PIA Quote of the Day".
 
 ## Network behaviour (BrainyQuote terms: personal use, no scraping)
 - Only the RSS feeds are read, never web pages; one request per feed per day, sent with the user-agent
-  `AllenQuoteOfTheDay/0.1 (KDE Plasma widget; personal RSS reader, once a day)`.
+  `AllenQuoteOfTheDay/0.1.1 (KDE Plasma widget; personal RSS reader, once a day)`.
 - Feeds switch at midnight US Eastern; the widget checks shortly after 05:00 UTC, only for feeds whose cached
   quote is older. A failed check is retried after an hour. Nothing else is downloaded (no icons).
 - Cache: QML LocalStorage (`~/.local/share/plasmashell/QML/OfflineStorage/`).
 
 ## Install
 ```sh
-kpackagetool6 -t Plasma/Applet -i org.allen.quoteoftheday-v0.1.0.plasmoid   # first install (-u to upgrade)
+kpackagetool6 -t Plasma/Applet -i org.allen.quoteoftheday-v0.1.1.plasmoid   # first install (-u to upgrade)
 systemctl --user restart plasma-plasmashell
 ```
 or from a clone: `kpackagetool6 -t Plasma/Applet -i package`. Then right-click the desktop → **Add or Manage
@@ -36,7 +36,7 @@ Widgets…** → **Quote of the Day**.
 
 ## Build and release
 ```sh
-cd package && zip -r ../org.allen.quoteoftheday-v0.1.0.plasmoid . && cd ..
+cd package && zip -r ../org.allen.quoteoftheday-v0.1.1.plasmoid . && cd ..
 ```
 Release: bump `"Version"` in `package/metadata.json` (and the version in the user-agent in `ui/main.qml`), commit,
 `git tag -a v0.x.y -m "…"`, build, `git push origin main v0.x.y`.

@@ -123,7 +123,7 @@ PlasmoidItem {
         };
         xhr.open("GET", f.url);
         // Identify ourselves honestly (BrainyQuote's terms: personal use, their public RSS feeds, no scraping)
-        xhr.setRequestHeader("User-Agent", "AllenQuoteOfTheDay/0.1 (KDE Plasma widget; personal RSS reader, once a day)");
+        xhr.setRequestHeader("User-Agent", "AllenQuoteOfTheDay/0.1.1 (KDE Plasma widget; personal RSS reader, once a day)");
         xhr.send();
     }
 
