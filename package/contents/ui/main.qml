@@ -66,7 +66,7 @@ PlasmoidItem {
     readonly property string fontFamily: Plasmoid.configuration.fontFamily !== "" ? Plasmoid.configuration.fontFamily : Kirigami.Theme.defaultFont.family
     readonly property real quotePointSize: Plasmoid.configuration.fontPointSize
     readonly property real smallPointSize: Math.max(6, quotePointSize * 0.56)
-    FontMetrics { id: quoteMetrics; font.family: root.fontFamily; font.pointSize: root.quotePointSize; font.bold: true }
+    FontMetrics { id: quoteMetrics; font.family: root.fontFamily; font.pointSize: root.quotePointSize; font.weight: Plasmoid.configuration.quoteWeight }
 
     // ---- loading: cache first, network once a day ----
     function loadCache() {
@@ -327,7 +327,7 @@ PlasmoidItem {
                     wrapMode: Text.WordWrap
                     font.family: root.fontFamily
                     font.pointSize: root.entry ? root.quotePointSize : root.smallPointSize
-                    font.bold: root.entry !== null
+                    font.weight: root.entry !== null ? Plasmoid.configuration.quoteWeight : Font.Normal
                     color: root.withAlpha(root.primaryColor, root.softAlpha)
                 }
 

@@ -15,6 +15,7 @@ KCM.SimpleKCM {
 
     property var cfg_categories: []
     property alias cfg_showReadMore: showReadMore.checked
+    property int cfg_quoteWeight
 
     function toggle(id, on) {
         var list = cfg_categories.slice();
@@ -55,6 +56,25 @@ KCM.SimpleKCM {
         Kirigami.Separator {
             Kirigami.FormData.label: i18n("Button")
             Kirigami.FormData.isSection: true
+        }
+
+        QQC.ComboBox {
+            id: quoteWeight
+            Kirigami.FormData.label: i18n("Quote weight:")
+            textRole: "text"
+            model: [
+                { weight: 400, text: i18n("Regular") },
+                { weight: 500, text: i18n("Medium") },
+                { weight: 600, text: i18n("SemiBold") },
+                { weight: 700, text: i18n("Bold") }
+            ]
+            currentIndex: Math.max(0, model.findIndex(item => item.weight === quotesPage.cfg_quoteWeight))
+            onActivated: index => quotesPage.cfg_quoteWeight = model[index].weight
+        }
+
+        QQC.Label {
+            text: i18n("The author stays bold. Fonts with only regular and bold (e.g. Hack) use the nearest weight.")
+            opacity: 0.75
         }
 
         QQC.CheckBox {
